@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revelador de Enlaces</title>
+    <link rel="icon" href="/public/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔗 Revelador de Enlaces</h1>
+      <p class="subtitle">
+        Expande y revela cualquier enlace acortado para ver su destino real
+        antes de hacer clic
+      </p>
+
+      <div class="input-box">
+        <input
+          id="shortUrl"
+          type="text"
+          placeholder="Ingresa el enlace acortado (ej: https://acortar.link/wBRItB)"
+        />
+        <button id="expandBtn">⤴ Expandir URL</button>
+      </div>
+
+      <div class="history">
+        <h2>🕒 Historial Reciente</h2>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
