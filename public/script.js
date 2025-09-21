@@ -2,7 +2,6 @@ const input = document.getElementById("shortUrl");
 const expandBtn = document.getElementById("expandBtn");
 const historyList = document.getElementById("historyList");
 
-// Cargar historial guardado
 let history = JSON.parse(localStorage.getItem("history")) || [];
 renderHistory();
 
@@ -26,7 +25,6 @@ expandBtn.addEventListener("click", async () => {
 
     const finalUrl = data.finalUrl;
 
-    // Guardar en historial
     const item = {
       original: url,
       expanded: finalUrl,
@@ -38,7 +36,6 @@ expandBtn.addEventListener("click", async () => {
 
     renderHistory();
 
-    // Abrir automáticamente en una nueva pestaña
     window.open(finalUrl, "_blank");
   } catch (err) {
     alert("Error de conexión con el servidor");

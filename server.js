@@ -14,8 +14,12 @@ app.use(express.json());
 
 app.post("/expand", async (req, res) => {
   try {
-    const { url } = req.body;
+    let { url } = req.body;
     if (!url) return res.status(400).json({ error: "Falta la URL" });
+
+    if (!/^https?:\/\//i.test(url)) {
+      url = "https://" + url;
+    }
 
     const response = await fetch(url, {
       redirect: "follow",
