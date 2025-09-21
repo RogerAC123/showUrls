@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Revelador de Enlaces</title>
-    <link rel="icon" href="/public/logo.png" />
+    <title>🔗 Revelador de Enlaces</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,13 +14,19 @@
         antes de hacer clic
       </p>
 
-      <div class="input-box">
+      <!-- 🔹 Ahora es un formulario -->
+      <form id="urlForm" class="input-box">
         <input
           id="shortUrl"
           type="text"
-          placeholder="Ingresa el enlace acortado (ej: https://acortar.link/wBRItB)"
+          placeholder="Ingresa el enlace acortado (ej: acortar.link/wBRItB)"
+          required
         />
-      </div>
+        <button type="submit" id="expandBtn">
+          <span class="btn-text">⤴ Expandir URL</span>
+          <span class="loader" style="display: none"></span>
+        </button>
+      </form>
 
       <div class="history">
         <h2>🕒 Historial Reciente</h2>
