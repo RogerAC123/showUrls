@@ -8,12 +8,17 @@ const loader = expandBtn.querySelector(".loader");
 let history = JSON.parse(localStorage.getItem("history")) || [];
 renderHistory();
 
+input.addEventListener("paste", () => {
+  setTimeout(() => {
+    form.requestSubmit();
+  }, 50);
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const url = input.value.trim();
   if (!url) return;
 
-  // Mostrar loader
   btnText.style.display = "none";
   loader.style.display = "inline-block";
   expandBtn.disabled = true;
@@ -22,7 +27,6 @@ form.addEventListener("submit", async (e) => {
     await expandUrl(url);
     input.value = "";
   } finally {
-    // Restaurar botón
     btnText.style.display = "inline";
     loader.style.display = "none";
     expandBtn.disabled = false;
